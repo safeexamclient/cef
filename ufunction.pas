@@ -1,11 +1,10 @@
-unit uFun;
+unit uFunction;
 
 {$mode objfpc}{$H+}
 
 interface
 
 uses
-  //Classes, SysUtils;
   SysUtils, Messages, Dialogs, Classes, Windows, Winsock, StrUtils;
 
 function Get_LocalIP():String;
@@ -39,11 +38,12 @@ begin
   end;
   WSACleanup;
   //主机名 phe.h_name
-  //此时的 result 可能是多个IP的，如 192.168.0.1,192.168.78.1,192.168.23.9
+  //此时的 result 可能是多个IP的，如 192.168.0.1,192.168.78.1
   if pos(',', result) > 0 then
     result := LeftStr(result, pos(',', result)-1);
 end;
 
 
 end.
+
 

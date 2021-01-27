@@ -65,6 +65,14 @@ begin
       fEatKeystroke:=
         ((p^.vkCode=VK_TAB) and ((p^.flags and LLKHF_ALTDOWN) <> 0)) or
         ((p^.vkCode=VK_ESCAPE) and ((p^.flags and LLKHF_ALTDOWN) <> 0))or
+        ((p^.vkCode=VK_Lwin) and (p^.vkCode=68))or
+        ((p^.vkCode=VK_Rwin) and (p^.vkCode=68))or
+        (p^.vkCode=VK_F7) or
+        (p^.vkCode=VK_F8) or
+        (p^.vkCode=VK_F9) or
+        (p^.vkCode=VK_F10) or
+        (p^.vkCode=VK_F11) or
+        (p^.vkCode=VK_F12) or
         (p^.vkCode=VK_Lwin) or
         (p^.vkCode=VK_Rwin) or
         (p^.vkCode=VK_apps) or
@@ -81,3 +89,4 @@ begin
 end;
 
 end.
+

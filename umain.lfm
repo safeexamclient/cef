@@ -1,132 +1,123 @@
 object Form1: TForm1
-  Left = 395
-  Height = 628
-  Top = 167
-  Width = 1199
-  BorderStyle = bsSingle
-  Caption = '安全考试客户端'
-  ClientHeight = 628
-  ClientWidth = 1199
+  Left = 393
+  Height = 601
+  Top = 143
+  Width = 1190
+  Caption = 'Form1'
+  ClientHeight = 601
+  ClientWidth = 1190
   DesignTimePPI = 120
-  OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
   LCLVersion = '2.0.10.0'
   object Panel_Top: TPanel
     Left = 0
-    Height = 64
+    Height = 63
     Top = 0
-    Width = 1199
+    Width = 1190
     Align = alTop
-    BevelColor = clSilver
-    ClientHeight = 64
-    ClientWidth = 1199
+    ClientHeight = 63
+    ClientWidth = 1190
     Color = clWhite
     ParentColor = False
     TabOrder = 0
     object Label_Top: TLabel
-      Left = 16
-      Height = 32
+      Left = 24
+      Height = 20
       Top = 16
-      Width = 175
+      Width = 105
       Caption = '安全考试客户端'
-      Font.Color = 5263440
-      Font.Height = -25
       ParentColor = False
-      ParentFont = False
+      OnDblClick = Label_TopDblClick
+    end
+  end
+  object Panel_Main: TPanel
+    Left = 0
+    Height = 491
+    Top = 63
+    Width = 1190
+    Align = alClient
+    ClientHeight = 491
+    ClientWidth = 1190
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 1
+    object CEFWindowParent1: TCEFWindowParent
+      Left = 1
+      Height = 489
+      Top = 1
+      Width = 1188
+      Align = alClient
+      TabOrder = 0
     end
   end
   object Panel_Bottom: TPanel
     Left = 0
-    Height = 40
-    Top = 588
-    Width = 1199
+    Height = 47
+    Top = 554
+    Width = 1190
     Align = alBottom
-    BevelColor = clSilver
-    ClientHeight = 40
-    ClientWidth = 1199
+    ClientHeight = 47
+    ClientWidth = 1190
     Color = clWhite
     ParentColor = False
-    TabOrder = 1
+    TabOrder = 2
     object Label_Left: TLabel
-      Left = 24
+      Left = 25
       Height = 20
-      Top = 8
-      Width = 165
-      Caption = '提示：考试过程全程锁屏'
-      Font.Color = clGray
-      Font.Height = -15
+      Top = 14
+      Width = 74
+      Caption = 'Label_Left'
       ParentColor = False
-      ParentFont = False
       OnDblClick = Label_LeftDblClick
     end
     object Label_Right: TLabel
-      Left = 992
+      Left = 1040
       Height = 20
       Top = 8
-      Width = 178
-      Caption = 'IP地址：192.168.101.123'
+      Width = 85
+      Caption = 'Label_Right'
       ParentColor = False
     end
-    object BitBtn_Exit: TBitBtn
-      Left = 312
+    object Edit_Exit: TEdit
+      Left = 136
       Height = 28
+      Top = 6
+      Width = 64
+      TabOrder = 0
+    end
+    object BitBtn_Exit: TBitBtn
+      Left = 224
+      Height = 30
       Top = 8
-      Width = 60
+      Width = 70
       Default = True
       DefaultCaption = True
       Kind = bkOK
       ModalResult = 1
       OnClick = BitBtn_ExitClick
-      TabOrder = 0
-    end
-    object Edit_Exit: TEdit
-      Left = 240
-      Height = 28
-      Top = 8
-      Width = 60
       TabOrder = 1
     end
   end
-  object Panel_Main: TPanel
-    Left = 0
-    Height = 524
-    Top = 64
-    Width = 1199
-    Align = alClient
-    ClientHeight = 524
-    ClientWidth = 1199
-    Color = clWhite
-    ParentColor = False
-    TabOrder = 2
-    object CEFWindowParent1: TCEFWindowParent
-      Left = 1
-      Height = 522
-      Top = 1
-      Width = 1197
-      Align = alClient
-      TabOrder = 0
-    end
+  object Chromium1: TChromium
+    OnAddressChange = Chromium1AddressChange
+    Left = 128
+    Top = 126
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
-    Left = 88
-    Top = 104
+    Left = 290
+    Top = 176
   end
   object Timer2: TTimer
     OnTimer = Timer2Timer
-    Left = 88
-    Top = 191
-  end
-  object Chromium1: TChromium
-    OnBeforeContextMenu = Chromium1BeforeContextMenu
-    OnAddressChange = Chromium1AddressChange
-    Left = 225
-    Top = 190
+    Left = 384
+    Top = 176
   end
   object Timer3: TTimer
+    Interval = 5000
     OnTimer = Timer3Timer
-    Left = 88
-    Top = 278
+    Left = 484
+    Top = 176
   end
 end

@@ -18,9 +18,10 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <MajorVersionNr Value="2"/>
+      <MinorVersionNr Value="1"/>
       <RevisionNr Value="3"/>
-      <BuildNr Value="15"/>
-      <StringTable CompanyName="www.safeexamclient.com" FileDescription="Safe Exam Client" ProductName="Safe Exam Client" ProductVersion="www.safeexamclient.com"/>
+      <BuildNr Value="26"/>
+      <StringTable Comments="Safe Exam Client" CompanyName="Safe Exam Client" FileDescription="www.safeexamclient.com" InternalName="Safe Exam Client" LegalCopyright="ChenGuang" ProductName="Safe Exam Client" ProductVersion="2.1.3"/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="Default" Default="True"/>
@@ -41,7 +42,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="7">
+    <Units Count="4">
       <Unit0>
         <Filename Value="Exam.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -55,30 +56,15 @@
         <UnitName Value="uMain"/>
       </Unit1>
       <Unit2>
-        <Filename Value="ufun.pas"/>
+        <Filename Value="ufunction.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="uFun"/>
+        <UnitName Value="uFunction"/>
       </Unit2>
       <Unit3>
         <Filename Value="uhook.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uHook"/>
       </Unit3>
-      <Unit4>
-        <Filename Value="uconfig.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="uConfig"/>
-      </Unit4>
-      <Unit5>
-        <Filename Value="ujson.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="uJson"/>
-      </Unit5>
-      <Unit6>
-        <Filename Value="uparameter.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="uParameter"/>
-      </Unit6>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
