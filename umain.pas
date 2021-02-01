@@ -34,7 +34,6 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Label_LeftDblClick(Sender: TObject);
-    procedure Label_TopDblClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure Timer2Timer(Sender: TObject);
     procedure Timer3Timer(Sender: TObject);
@@ -186,11 +185,6 @@ begin
    CONFIG_PASSWORD := EXAM_LOCK_PASSWORD;
   //释放资源
   Inifile.Free;
-end;
-
-procedure TForm1.Label_TopDblClick(Sender: TObject);
-begin
-  application.Terminate;
 end;
 
 //Timer1 - 用于窗体启动时打开默认网址

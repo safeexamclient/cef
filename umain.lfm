@@ -28,7 +28,6 @@ object Form1: TForm1
       Width = 105
       Caption = '安全考试客户端'
       ParentColor = False
-      OnDblClick = Label_TopDblClick
     end
   end
   object Panel_Main: TPanel
