@@ -64,7 +64,7 @@ object Form1: TForm1
     object Label_Left: TLabel
       Left = 25
       Height = 20
-      Top = 14
+      Top = 16
       Width = 74
       Caption = 'Label_Left'
       ParentColor = False
@@ -81,7 +81,7 @@ object Form1: TForm1
     object Edit_Exit: TEdit
       Left = 136
       Height = 28
-      Top = 6
+      Top = 8
       Width = 64
       TabOrder = 0
     end
@@ -90,12 +90,31 @@ object Form1: TForm1
       Height = 30
       Top = 8
       Width = 70
+      Caption = 'Exit'
       Default = True
-      DefaultCaption = True
       Kind = bkOK
-      ModalResult = 1
       OnClick = BitBtn_ExitClick
       TabOrder = 1
+    end
+    object BitBtn_Retry: TBitBtn
+      Left = 312
+      Height = 30
+      Top = 8
+      Width = 70
+      Caption = 'Retry'
+      Kind = bkRetry
+      OnClick = BitBtn_RetryClick
+      TabOrder = 2
+    end
+    object BitBtn_Home: TBitBtn
+      Left = 400
+      Height = 30
+      Top = 8
+      Width = 70
+      Caption = 'Home'
+      Kind = bkHelp
+      OnClick = Timer1Timer
+      TabOrder = 3
     end
   end
   object Chromium1: TChromium

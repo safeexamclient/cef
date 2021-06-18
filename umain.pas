@@ -16,6 +16,8 @@ type
 
   TForm1 = class(TForm)
     BitBtn_Exit: TBitBtn;
+    BitBtn_Retry: TBitBtn;
+    BitBtn_Home: TBitBtn;
     CEFWindowParent1: TCEFWindowParent;
     Chromium1: TChromium;
     Edit_Exit: TEdit;
@@ -29,6 +31,7 @@ type
     Timer2: TTimer;
     Timer3: TTimer;
     procedure BitBtn_ExitClick(Sender: TObject);
+    procedure BitBtn_RetryClick(Sender: TObject);
     procedure Chromium1AddressChange(Sender: TObject;
       const browser: ICefBrowser; const frame: ICefFrame; const url: ustring);
     procedure FormDestroy(Sender: TObject);
@@ -134,19 +137,33 @@ begin
   Edit_Exit.Left:= Label_Left.Left + Label_Left.Width + 20 ;
   Edit_Exit.MaxLength:=6;
   Edit_Exit.NumbersOnly:=true;
-  BitBtn_Exit.Width:=64;
+
+  BitBtn_Exit.Width:=72;
   BitBtn_Exit.Height:=28;
   BitBtn_Exit.Top:=Edit_Exit.Top-1;
   BitBtn_Exit.Left:=Edit_Exit.Left + Edit_Exit.Width + 10 ;
-  BitBtn_Exit.Kind:=bkOK;
+
+  BitBtn_Retry.Width:=72;
+  BitBtn_Retry.Height:=28;
+  BitBtn_Retry.Top:=BitBtn_Exit.Top;
+  BitBtn_Retry.Left:=BitBtn_Exit.Left + BitBtn_Exit.Width + 10 ;
+
+  BitBtn_Home.Width:=72;
+  BitBtn_Home.Height:=28;
+  BitBtn_Home.Top:=BitBtn_Exit.Top;
+  BitBtn_Home.Left:=BitBtn_Retry.Left + BitBtn_Retry.Width + 10 ;
+
   Edit_Exit.Visible:=false;
   BitBtn_Exit.Visible:=false;
+  BitBtn_Retry.Visible:=false;
+  BitBtn_Home.Visible:=false;
+
   //定时器
   Timer1.Interval:=1000;
   Timer1.Enabled:=true;
   Timer2.Interval:=1000;
   Timer2.Enabled:=false;
-  Timer3.Interval:=5000;
+  Timer3.Interval:=20000;
   Timer3.Enabled:=true;
   //初始化
   Chromium1.CreateBrowser(CEFWindowParent1, '');
@@ -159,6 +176,8 @@ procedure TForm1.Label_LeftDblClick(Sender: TObject);
 begin
   Edit_Exit.Visible := true;
   BitBtn_Exit.Visible := true;
+  BitBtn_Retry.Visible := true;
+  BitBtn_Home.Visible := true;
   Edit_Exit.SetFocus;
 end;
 
@@ -232,6 +251,8 @@ procedure TForm1.Timer3Timer(Sender: TObject);
 begin
   Edit_Exit.Visible := false;
   BitBtn_Exit.Visible := false;
+  BitBtn_Retry.Visible := false;
+  BitBtn_Home.Visible := false;
 end;
 
 procedure TForm1.Chromium1AddressChange(Sender: TObject;
@@ -336,6 +357,12 @@ begin
     pwd := EXAM_LOCK_PASSWORD;
   if(Edit_Exit.Text = pwd) then
     Application.Terminate;
+end;
+
+//刷新当前界面
+procedure TForm1.BitBtn_RetryClick(Sender: TObject);
+begin
+  Chromium1.Reload;
 end;
 
 function UnicodeToChinese(inputstr: string): string;
